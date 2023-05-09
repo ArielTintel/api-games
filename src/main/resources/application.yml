@@ -1,1 +1,23 @@
-
+spring:
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+    
+  datasource:
+    username: sa
+    url: jdbc:h2:mem:games_db
+    password:
+    
+  h2:
+    console:
+      enabled: true
+      path: /h2
+      
+  profiles:
+    active: ${APP_PROFILE:test}
+    
+cors:
+  origins: ${CORS_ORIGINS:http://localhost:5173,http://localhost:3000}
